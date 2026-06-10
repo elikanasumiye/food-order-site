@@ -1,0 +1,119 @@
+{
+  "info": {
+    "name": "Mbeya Food Shop Local API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "testEmail",
+      "value": "postman.user@example.com"
+    },
+    {
+      "key": "testPassword",
+      "value": "Test@1234"
+    }
+  ],
+  "item": [
+    {
+      "name": "Home",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "Login Page",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/login"
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "form_type",
+              "value": "register"
+            },
+            {
+              "key": "register_name",
+              "value": "Postman User"
+            },
+            {
+              "key": "register_email",
+              "value": "{{testEmail}}"
+            },
+            {
+              "key": "register_phone",
+              "value": "0712345678"
+            },
+            {
+              "key": "register_address",
+              "value": "Mbeya"
+            },
+            {
+              "key": "register_password",
+              "value": "{{testPassword}}"
+            },
+            {
+              "key": "register_confirm_password",
+              "value": "{{testPassword}}"
+            }
+          ]
+        },
+        "url": "{{baseUrl}}/login"
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "form_type",
+              "value": "login"
+            },
+            {
+              "key": "login_email",
+              "value": "{{testEmail}}"
+            },
+            {
+              "key": "login_password",
+              "value": "{{testPassword}}"
+            }
+          ]
+        },
+        "url": "{{baseUrl}}/login"
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/logout"
+      }
+    }
+  ]
+}
