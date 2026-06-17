@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Register - Mbeya Food Shop</title>
+    <title>Ingia na Jisajili - Mbeya Bedsheets</title>
     <link rel="stylesheet" href="/login-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,8 +11,8 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="nav-logo">
-                <i class="fas fa-utensils"></i>
-                <span>Mbeya Food</span>
+                <i class="fas fa-bed"></i>
+                <span>Mbeya Bedsheets</span>
             </div>
         </div>
     </nav>
@@ -20,20 +20,20 @@
     <div class="main-container">
         <div class="image-section">
             <div class="image-content">
-                <h1>Welcome to Mbeya Food</h1>
-                <p>Delicious meals delivered to your doorstep</p>
-                <div class="food-images">
-                    <img src="/images/bugger.png" alt="Burger">
-                    <img src="/images/piza.png" alt="Pizza">
-                    <img src="/images/pilau.jpg" alt="Pilau">
+                <h1>Karibu Mbeya Bedsheets</h1>
+                <p>Shuka bora na mapazia mazuri kwa nyumba yako</p>
+                <div class="product-images">
+                    <img src="/images/Cotton_Bed_Sheets_Classic_Set_Glacier_Blue_COM_a9e2a10e-1e45-4c29-9898-0cca30e95f50.webp" alt="Shuka ya bluu">
+                    <img src="/images/51hqqMdXQiL._AC_UF894,1000_QL80_.jpg" alt="Bedsheet">
+                    <img src="/images/Close-up-Of-S-Fold-Curtains-640w.webp" alt="Mapazia">
                 </div>
             </div>
         </div>
 
         <div class="form-section">
             <div class="form-tabs">
-                <button type="button" class="tab-btn <%= activeTab === 'login' ? 'active' : '' %>" onclick="switchTab(event, 'login')">Login</button>
-                <button type="button" class="tab-btn <%= activeTab === 'register' ? 'active' : '' %>" onclick="switchTab(event, 'register')">Register</button>
+                <button type="button" class="tab-btn <%= activeTab === 'login' ? 'active' : '' %>" onclick="switchTab(event, 'login')">Ingia</button>
+                <button type="button" class="tab-btn <%= activeTab === 'register' ? 'active' : '' %>" onclick="switchTab(event, 'register')">Jisajili</button>
             </div>
 
             <% if (errors && errors.length) { %>
@@ -51,77 +51,77 @@
             <% } %>
 
             <form id="login-form" class="auth-form <%= activeTab === 'login' ? 'active' : '' %>" method="post" action="/login">
-                <h2>Login to Your Account</h2>
+                <h2>Ingia kwenye akaunti yako</h2>
 
                 <input type="hidden" name="form_type" value="login">
                 <div class="form-group">
-                    <label for="login-email">Email Address</label>
-                    <input type="email" id="login-email" name="login_email" placeholder="your@email.com" value="<%= loginEmail %>" required>
+                    <label for="login-email">Barua pepe</label>
+                    <input type="email" id="login-email" name="login_email" placeholder="jina@email.com" value="<%= loginEmail %>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" name="login_password" placeholder="Your password" required>
+                    <label for="login-password">Nenosiri</label>
+                    <input type="password" id="login-password" name="login_password" placeholder="Nenosiri lako" required>
                 </div>
 
                 <div class="form-options">
                     <label class="checkbox-label">
                         <input type="checkbox" name="remember_me">
-                        <span>Remember me</span>
+                        <span>Nikumbuke</span>
                     </label>
-                    <a href="#" class="forgot-link">Forgot Password?</a>
+                    <a href="#" class="forgot-link">Umesahau nenosiri?</a>
                 </div>
 
-                <button type="submit" class="submit-btn">Login Now</button>
+                <button type="submit" class="submit-btn">Ingia Sasa</button>
 
                 <div class="form-footer">
-                    <p>Don't have an account? <a href="#" onclick="switchTab(event, 'register')">Register here</a></p>
+                    <p>Huna akaunti? <a href="#" onclick="switchTab(event, 'register')">Jisajili hapa</a></p>
                 </div>
             </form>
 
             <form id="register-form" class="auth-form <%= activeTab === 'register' ? 'active' : '' %>" method="post" action="/login">
-                <h2>Create Your Account</h2>
+                <h2>Tengeneza akaunti yako</h2>
 
                 <input type="hidden" name="form_type" value="register">
                 <div class="form-group">
-                    <label for="register-name">Full Name</label>
-                    <input type="text" id="register-name" name="register_name" placeholder="John Doe" value="<%= registerName %>" required>
+                    <label for="register-name">Jina kamili</label>
+                    <input type="text" id="register-name" name="register_name" placeholder="Jina lako" value="<%= registerName %>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-email">Email Address</label>
-                    <input type="email" id="register-email" name="register_email" placeholder="your@email.com" value="<%= registerEmail %>" required>
+                    <label for="register-email">Barua pepe</label>
+                    <input type="email" id="register-email" name="register_email" placeholder="jina@email.com" value="<%= registerEmail %>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-phone">Phone Number</label>
+                    <label for="register-phone">Namba ya simu</label>
                     <input type="tel" id="register-phone" name="register_phone" placeholder="+255 (0)..." value="<%= registerPhone %>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-address">Delivery Address</label>
-                    <input type="text" id="register-address" name="register_address" placeholder="Your address in Mbeya" value="<%= registerAddress %>" required>
+                    <label for="register-address">Anwani ya kufikishiwa</label>
+                    <input type="text" id="register-address" name="register_address" placeholder="Anwani yako Mbeya" value="<%= registerAddress %>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-password">Password</label>
-                    <input type="password" id="register-password" name="register_password" placeholder="Create a strong password" required>
+                    <label for="register-password">Nenosiri</label>
+                    <input type="password" id="register-password" name="register_password" placeholder="Tengeneza nenosiri imara" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-confirm-password">Confirm Password</label>
-                    <input type="password" id="register-confirm-password" name="register_confirm_password" placeholder="Confirm password" required>
+                    <label for="register-confirm-password">Thibitisha nenosiri</label>
+                    <input type="password" id="register-confirm-password" name="register_confirm_password" placeholder="Rudia nenosiri" required>
                 </div>
 
                 <label class="checkbox-label">
                     <input type="checkbox" required>
-                    <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                    <span>Nakubaliana na <a href="#">vigezo na masharti</a></span>
                 </label>
 
-                <button type="submit" class="submit-btn">Create Account</button>
+                <button type="submit" class="submit-btn">Tengeneza Akaunti</button>
 
                 <div class="form-footer">
-                    <p>Already have an account? <a href="#" onclick="switchTab(event, 'login')">Login here</a></p>
+                    <p>Tayari una akaunti? <a href="#" onclick="switchTab(event, 'login')">Ingia hapa</a></p>
                 </div>
             </form>
         </div>

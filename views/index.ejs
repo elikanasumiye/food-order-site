@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mbeya Food Shop - Fresh & Delicious</title>
+    <title>Mbeya Bedsheets - Shuka Bora</title>
     <link rel="stylesheet" href="/style-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,19 +11,14 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <i class="fas fa-utensils"></i>
-                <span>Mbeya Food Shop</span>
+                <i class="fas fa-bed"></i>
+                <span>Mbeya Bedsheets</span>
             </div>
             <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <% if (userName) { %>
-                    <a href="/logout">Logout</a>
-                <% } else { %>
-                    <a href="/login">Login</a>
-                <% } %>
+                <a href="#home">Mwanzo</a>
+                <a href="#products">Bidhaa</a>
+                <a href="#about">Kuhusu</a>
+                <a href="#contact">Mawasiliano</a>
             </nav>
             <div class="cart-icon" onclick="openCart()">
                 <i class="fas fa-shopping-cart"></i>
@@ -34,15 +29,15 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Fresh & Delicious Food Delivery</h1>
-            <p>Your favorite meals, delivered fresh to your doorstep in Mbeya</p>
-            <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+            <h1>Shuka Nzuri kwa Chumba Chako</h1>
+            <p>Nunua bedsheets laini, zenye ubora na muonekano wa kisasa hapa Mbeya</p>
+            <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Nunua Sasa</button>
         </div>
     </section>
 
     <section class="products" id="products">
         <div class="container">
-            <h2>Our Menu</h2>
+            <h2>Bidhaa Zetu</h2>
             <div class="products-grid" id="productsGrid"></div>
         </div>
     </section>
@@ -50,31 +45,60 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
-                <h2>Shopping Cart</h2>
+                <h2>Kikapu cha Manunuzi</h2>
                 <span class="close-btn" onclick="closeCart()">&times;</span>
             </div>
             <div class="cart-items" id="cartItems">
-                <p class="empty-cart">Your cart is empty</p>
+                <p class="empty-cart">Kikapu chako kiko wazi</p>
             </div>
+            <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+                <h3>Taarifa za Oda</h3>
+                <div class="form-group">
+                    <label for="customerName">Jina kamili</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Jina lako kamili" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Barua pepe</label>
+                    <input type="email" id="customerEmail" name="customerEmail" placeholder="jina@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerContact">Mawasiliano</label>
+                    <input type="tel" id="customerContact" name="customerContact" placeholder="+255 au 0..." required>
+                </div>
+                <div class="form-group">
+                    <label for="customerLocation">Mahali pa kufikishiwa</label>
+                    <input type="text" id="customerLocation" name="customerLocation" placeholder="Mfano: Uyole, Mbeya" required>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryPayment">Malipo ya ufikishaji</label>
+                    <select id="deliveryPayment" name="deliveryPayment" required>
+                        <option value="">Chagua namna ya kulipa</option>
+                        <option value="Nitalipa baada ya bidhaa kufika">Nitalipa baada ya bidhaa kufika</option>
+                        <option value="Nitalipa kwa M-Pesa/Tigo Pesa/Airtel Money">Nitalipa kwa M-Pesa/Tigo Pesa/Airtel Money</option>
+                        <option value="Nitalipa kwa fedha taslimu">Nitalipa kwa fedha taslimu</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-order-btn">Tuma Oda</button>
+            </form>
             <div class="cart-footer">
                 <div class="cart-total">
-                    <strong>Total: </strong>
+                    <strong>Jumla: </strong>
                     <span id="cartTotal">TZS 0</span>
                 </div>
-                <button class="checkout-btn" onclick="checkout()">Checkout</button>
-                <button class="continue-btn" onclick="closeCart()">Continue Shopping</button>
+                <button class="checkout-btn" onclick="checkout()">Kamilisha Oda</button>
+                <button class="continue-btn" onclick="closeCart()">Endelea Kununua</button>
             </div>
         </div>
     </div>
 
     <section class="about" id="about">
         <div class="container">
-            <h2>About Us</h2>
+            <h2>Kuhusu Sisi</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Welcome to Mbeya Food Shop, your trusted food delivery partner in Mbeya, Tanzania. We pride ourselves on offering fresh, delicious, and affordable meals delivered to your doorstep.</p>
-                    <p><strong>Location:</strong> Mbeya, Tanzania</p>
-                    <p><strong>Operating Hours:</strong> 10:00 AM - 10:00 PM</p>
+                    <p>Karibu Mbeya Bedsheets, duka lako la kuaminika kwa shuka, seti za vitanda na mapazia yenye ubora. Tunakuletea bidhaa nzuri, bei rafiki, na huduma ya haraka kwa wateja wa Mbeya na maeneo ya karibu.</p>
+                    <p><strong>Mahali:</strong> Mbeya, Tanzania</p>
+                    <p><strong>Muda wa kazi:</strong> 10:00 asubuhi - 10:00 jioni</p>
                 </div>
             </div>
         </div>
@@ -82,27 +106,27 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Wasiliana Nasi</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <h3>Location</h3>
+                        <h3>Mahali</h3>
                         <p>Mbeya, Tanzania</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div>
-                        <h3>Phone</h3>
+                        <h3>Simu</h3>
                         <p>+255 (0)25 250 3000</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div>
-                        <h3>Email</h3>
-                        <p>info@mbeya-food.tz</p>
+                        <h3>Barua pepe</h3>
+                        <p>info@mbeya-bedsheets.tz</p>
                     </div>
                 </div>
             </div>
@@ -110,7 +134,7 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 Mbeya Food Shop. All rights reserved.</p>
+        <p>&copy; 2026 Mbeya Bedsheets. Haki zote zimehifadhiwa.</p>
     </footer>
 
     <script src="/script-main.js"></script>

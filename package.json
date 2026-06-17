@@ -1,7 +1,7 @@
 {
   "name": "asgn-node-express-prisma",
   "version": "1.0.0",
-  "description": "Mbeya Food Shop converted from PHP to Node.js, Express.js, and Prisma",
+  "description": "Mbeya Bedsheets shop built with Node.js, Express.js, and Prisma",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

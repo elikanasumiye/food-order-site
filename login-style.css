@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary-color: #FF6B35;
-    --secondary-color: #004E89;
+    --primary-color: #2f8f83;
+    --secondary-color: #6b5b95;
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --text-dark: #333333;
@@ -97,7 +97,7 @@ body {
     margin-bottom: 40px;
 }
 
-.food-images {
+.product-images {
     display: flex;
     gap: 25px;
     justify-content: center;
@@ -105,7 +105,7 @@ body {
     flex-wrap: wrap;
 }
 
-.food-images img {
+.product-images img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -114,7 +114,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.food-images img:hover {
+.product-images img:hover {
     transform: scale(1.05);
 }
 
@@ -213,7 +213,7 @@ body {
     outline: none;
     border-color: var(--primary-color);
     background-color: var(--white);
-    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+    box-shadow: 0 0 0 4px rgba(47, 143, 131, 0.12);
 }
 
 /* Form Options */
@@ -255,7 +255,7 @@ body {
 .submit-btn {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #ff8c55 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--white);
     border: none;
     border-radius: 8px;
@@ -266,12 +266,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(47, 143, 131, 0.28);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 6px 20px rgba(47, 143, 131, 0.36);
 }
 
 .submit-btn:active {
